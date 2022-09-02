@@ -1,9 +1,15 @@
 export const Colors = {
-  Primary: "#4380FF",
-  Background: "#1C1C1C",
-  White: "#FFFFFF",
+  Primary: "#fb8c00",
+  Link: "#93d2fd",
+  PrimaryDark: "#0F1C39",
+  PrimaryDisable: "#1e3f6f",
+  Background: "#0B1426",
+  White: "#FEFEFE",
   Black: "#212121",
-  Border: "#2121211c",
+  Border: "#e3e3e3",
+  Gray: "rgb(148, 155, 164)",
+  GrayBG: "#f7f9fa",
+  Gradients: { PrimaryToSec: ["#fb8c00", "#f2a440 "] },
 };
 
 const BreakPoints = {

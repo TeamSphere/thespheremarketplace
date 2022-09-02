@@ -1,5 +1,7 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { Colors } from "../src/components/Theme";
+import { useState } from "react";
+import Header from "../src/components/Header";
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -9,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p,a,h1,h2,h3,h5,h6,div,span{
-    color:${Colors.White};
+    // color:${Colors.White};
+    color: inherit;
   }
 
   a {
@@ -21,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    transition: all 0.3s;
   }
 
   /* width */
@@ -45,11 +49,26 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const Main=styled.div`
+  display: flex;
+  flex-direction: columnn;
+  width: 100%;
+  min-height: 100vh;
+`;
+
+const MobileMenu=styled.div``;
+const NavItem=styled.a``;
+
 function MyApp({ Component, pageProps }) {
+  const[MobileMennuIsOpen, setMobileMenunIsOpen] = useState(false);
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <Main>
+        <Header />
+        <Component {...pageProps} />
+      </Main>
+
     </>
   );
 }
